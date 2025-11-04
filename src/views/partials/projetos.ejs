@@ -1,8 +1,26 @@
 <section id="projetos" class="container mx-auto py-16">
-    <h2 class="text-2xl font-bold mb-4">Projetos</h2>
-    <p>Aqui estão alguns dos meus projetos:</p>
-    <ul class="list-disc pl-5">
-        <li><a href="[link-projeto]" class="text-blue-500 hover:underline">Projeto 1</a> - Descrição breve.</li>
-        <li><a href="[link-projeto]" class="text-blue-500 hover:underline">Projeto 2</a> - Descrição breve.</li>
-    </ul>
+    <h2 class="text-3xl font-bold mb-6">Projetos</h2>
+    <% const projects = (data && data.projects) || []; %>
+    <% if (projects.length) { %>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <% projects.forEach(p => { %>
+                <article class="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition">
+                    <% if (p.imageUrl) { %>
+                        <img src="<%= p.imageUrl %>" alt="<%= p.title %>" class="w-full h-40 object-cover" />
+                    <% } %>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg"><%= p.title %></h3>
+                        <p class="text-gray-600 text-sm mt-1"><%= p.description %></p>
+                        <% if (p.link) { %>
+                            <a href="<%= p.link %>" target="_blank" class="inline-flex items-center gap-2 text-emerald-700 hover:text-emerald-800 mt-3">
+                                Visitar <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        <% } %>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p class="text-gray-600">Ainda não há projetos cadastrados.</p>
+    <% } %>
 </section>

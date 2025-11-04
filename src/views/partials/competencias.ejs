@@ -1,8 +1,27 @@
-<section id="competencias" class="container mx-auto py-16 bg-gray-200">
-    <h2 class="text-2xl font-bold mb-4">Competências</h2>
-    <ul class="list-disc pl-5">
-        <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
-        <li>Frameworks (React, Node.js, Express)</li>
-        <li>Banco de Dados (MySQL, MongoDB)</li>
-    </ul>
+<section id="competencias" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold mb-6">Competências</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="font-semibold mb-3 flex items-center gap-2"><i class="ph ph-code text-emerald-700"></i> Técnicas</h3>
+            <% const t = (data && data.technicalSkills) || []; %>
+            <% if (t.length) { %>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <% t.forEach(s => { %><li><%= s %></li><% }) %>
+                </ul>
+            <% } else { %>
+                <p class="text-gray-600">Adicione suas competências técnicas.</p>
+            <% } %>
+        </div>
+        <div>
+            <h3 class="font-semibold mb-3 flex items-center gap-2"><i class="ph ph-users-three text-emerald-700"></i> Comportamentais</h3>
+            <% const s = (data && data.softSkills) || []; %>
+            <% if (s.length) { %>
+                <ul class="list-disc pl-6 space-y-1 text-gray-700">
+                    <% s.forEach(x => { %><li><%= x %></li><% }) %>
+                </ul>
+            <% } else { %>
+                <p class="text-gray-600">Adicione suas soft skills.</p>
+            <% } %>
+        </div>
+    </div>
 </section>

@@ -1,0 +1,26 @@
+<section id="certificacoes" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold mb-6">Certificações</h2>
+    <% const certs = (data && data.certifications) || []; %>
+    <% if (certs.length) { %>
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% certs.forEach(c => { %>
+            <li class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-certificate text-emerald-700 text-xl mt-1"></i>
+                    <div class="min-w-0">
+                        <h3 class="font-semibold text-lg truncate"><%= c.nome %></h3>
+                        <% if (c.emissor) { %>
+                            <p class="text-gray-700 text-sm"><%= c.emissor %></p>
+                        <% } %>
+                        <% if (c.data) { %>
+                            <p class="text-gray-500 text-sm"><%= c.data %></p>
+                        <% } %>
+                    </div>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+    <% } else { %>
+        <p class="text-gray-600">Ainda não há certificações cadastradas.</p>
+    <% } %>
+</section>

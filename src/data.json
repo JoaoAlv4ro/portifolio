@@ -1,24 +1,33 @@
 {
   "presentation": {
-    "fullName": "Seu Nome",
-    "contactEmail": "seu@email.com",
-    "bio": "Breve biografia...",
-    "profilePic": "/assets/profile.png"
+    "fullName": "João Álvaro Oliveira Silva",
+    "contactEmail": "joaosilvaabc3@email.com",
+    "bio": "Eu sou um estudante de Análise e Desenvolvimento de Sistemas em busca de oportunidades para aplicar e expandir meus conhecimentos em programação. Apaixonado por tecnologia e desenvolvimento, estou constantemente em aprendizado para aperfeiçoar minhas habilidades e conhecer as melhores práticas do mercado. ",
+    "profilePic": "/assets/profile.png",
+    "cvUrl": "https://www.dropbox.com/scl/fi/j3l4rdi1kywj5ytj4psjr/Curriculum-Vitae-Jo-o-lvaro.pdf?rlkey=nwc9ei6vt7v4peuluf2zcwa3t&st=170g7hkc&dl=0"
   },
   "education": [
     {
-      "course": "Tecnologia em Análise e Desenvolvimento de Sistemas",
-      "institution": "Sua Instituição",
+      "course": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "institution": "Fatec",
       "period": "Em andamento"
+    },
+    {
+      "course": "Técnico em Desenvolvimento de Sistemas",
+      "institution": "Fatec",
+      "period": "Concluído (2022)"
+    },
+    {
+      "course": "Técnico em Administração",
+      "institution": "CEPHAS",
+      "period": "Concluído (2022)"
     }
   ],
   "certifications": [
-    {
-      "name": "Certificação Exemplo"
-    }
+    {"nome": null, "emissor": null, "data": null}
   ],
   "technicalSkills": [
-    "JavaScript",
+    "TypeScript",
     "Node.js",
     "Express"
   ],
@@ -36,18 +45,25 @@
       "description": "Descrição do projeto exemplo.",
       "imageUrl": "/assets/exemplo.png",
       "link": "https://github.com/seuusuario/seuprojeto"
+    },
+    {
+      "id": 2,
+      "title": "Aerocode",
+      "description": "Um projeto feito em React e Node.",
+      "imageUrl": "/assets/novo.png",
+      "link": "https://github.com/joaoalv4ro/AV2"
     }
   ],
   "socialLinks": [
     {
       "name": "LinkedIn",
-      "href": "https://linkedin.com/in/seuusuario",
-      "iconClass": "fab fa-linkedin-in"
+      "href": "https://www.linkedin.com/in/joaoalv4ro",
+      "iconClass": "ph ph-linkedin-logo"
     },
     {
       "name": "GitHub",
-      "href": "https://github.com/seuusuario",
-      "iconClass": "fab fa-github"
+      "href": "https://github.com/joaoalv4ro",
+      "iconClass": "ph ph-github-logo"
     }
   ]
 }

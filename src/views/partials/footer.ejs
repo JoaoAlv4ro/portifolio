@@ -1,11 +1,19 @@
-<footer class="bg-gray-800 text-white text-center py-4">
-    <p>&copy; 2025 João Álvaro. Todos os direitos reservados.</p>
-    <div id="social" class="mt-2">
-        <p>Siga-me nas redes sociais:</p>
-        <ul class="flex justify-center space-x-4 mt-2">
-            <li><a href="[link-linkedin]" class="text-blue-400 hover:underline">LinkedIn</a></li>
-            <li><a href="[link-github]" class="text-gray-400 hover:underline">GitHub</a></li>
-            <li><a href="[link-twitter]" class="text-blue-300 hover:underline">Twitter</a></li>
-        </ul>
+<footer class="bg-emerald-950 text-white text-center py-8 mt-10">
+    <p>&copy; <%= new Date().getFullYear() %> <%= (data && data.presentation && data.presentation.fullName) || 'Seu Nome' %>. Todos os direitos reservados.</p>
+    <div id="social" class="mt-3">
+        <p class="text-sm text-emerald-200">Siga-me nas redes sociais:</p>
+        <% const socials = (data && data.socialLinks) || []; %>
+        <% if (socials.length) { %>
+            <ul class="flex justify-center gap-4 mt-2">
+                <% socials.forEach(s => { %>
+                    <li>
+                        <a href="<%= s.href %>" target="_blank" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition">
+                            <% if (s.iconClass) { %><i class="<%= s.iconClass %> text-4xl"></i><% } %>
+                            <span class="sr-only"><%= s.name %></span>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
     </div>
 </footer>

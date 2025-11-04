@@ -1,14 +1,19 @@
-<section id="formacao" class="container mx-auto py-16 bg-gray-200">
-    <!-- Formação -->
-    <h2 class="text-4xl font-bold">Formação</h2>
-    <ul class="text-2xl">
-        <li class="p-4 rounded-xl bg-zinc-50">
-            <h3 class="font-semibold flex items-center gap-2">
-                <i class="ph-fill ph-graduation-cap"></i>
-                <p>[Curso]</p>
-            </h3>
-            <p>[Instituição]</p>
-            <span class="font-light text-gray-500">[Ano]</span>
-        </li>
-    </ul>
+<section id="formacao" class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold mb-6">Formação</h2>
+    <% if (data && Array.isArray(data.education) && data.education.length) { %>
+        <ul class="grid grid-cols-1 gap-4">
+            <% data.education.forEach((edu) => { %>
+                <li class="p-5 rounded-xl bg-gray-50 border border-gray-200">
+                    <h3 class="font-semibold flex items-center gap-2 text-lg">
+                        <i class="ph-fill ph-graduation-cap text-emerald-700"></i>
+                        <span><%= edu.course %></span>
+                    </h3>
+                    <p class="text-gray-700"><%= edu.institution %></p>
+                    <span class="text-sm text-gray-500"><%= edu.period %></span>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p class="text-gray-600">Nenhum registro de formação ainda.</p>
+    <% } %>
 </section>

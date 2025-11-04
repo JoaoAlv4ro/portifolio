@@ -1,4 +1,26 @@
-<section id="sobre" class="container mx-auto py-16">
-    <h2 class="text-2xl font-bold mb-4">Sobre Mim</h2>
-    <p>Olá! Meu nome é João Álvaro. Sou um desenvolvedor apaixonado por criar soluções inovadoras e funcionais.</p>
+<% const p = (data && data.presentation) || {}; %>
+<section id="sobre" class="container mx-auto py-14">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-16">
+        <div>
+            <h2 class="text-4xl sm:text-5xl font-black tracking-tight">
+                Prazer, eu sou o
+                <% const lastName = (p.fullName || 'Seu Nome').trim().split(/\s+/).slice(1)[0]; %>
+                <span class="text-emerald-700"> <%= lastName %>!</span>
+            </h2>
+            <p class="mt-5 text-gray-700 leading-relaxed">
+                <%= p.bio || 'Breve biografia...' %>
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#projetos" class="px-5 py-2.5 rounded-lg bg-gray-900 text-white shadow hover:bg-gray-800 transition">Projetos</a>
+                <% if (p.cvUrl) { %>
+                    <a target="_blank" href="<%= p.cvUrl %>" class="px-5 py-2.5 rounded-lg bg-emerald-800 text-white shadow hover:bg-emerald-700 transition">Currículo</a>
+                <% } %>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <div class="rounded-3xl overflow-hidden shadow-2xl bg-emerald-900 p-2 w-[420px] h-[420px]">
+                <img src="<%= p.profilePic || '/assets/profile.png' %>" alt="Foto de perfil" class="w-full h-full object-cover rounded-2xl" />
+            </div>
+        </div>
+    </div>
 </section>

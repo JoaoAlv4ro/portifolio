@@ -1,12 +1,21 @@
-<header class="bg-gray-800 text-white p-4">
-    <nav class="container mx-auto flex justify-between">
-        <h1 class="text-lg font-bold">João Álvaro</h1>
-        <ul class="flex space-x-4">
-            <li><a href="#sobre" class="hover:underline">Sobre Mim</a></li>
-            <li><a href="#formacao" class="hover:underline">Formação</a></li>
-            <li><a href="#projetos" class="hover:underline">Projetos</a></li>
-            <li><a href="#competencias" class="hover:underline">Competências</a></li>
-            <li><a href="#social" class="hover:underline">Social</a></li>
+<% const fullName = (data && data.presentation && data.presentation.fullName) || 'Seu Nome'; %>
+<% const initials = fullName.trim().split(/\s+/).map(p => p[0]).join('').slice(0,2).toUpperCase(); %>
+<header class="bg-emerald-950 text-white py-3 shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-900 grid place-items-center font-semibold"><%= initials %></div>
+            <h1 class="text-base sm:text-lg font-semibold"><%= fullName %></h1>
+        </div>
+        <ul class="hidden md:flex items-center gap-6 text-sm">
+            <li><a href="#projetos" class="hover:text-emerald-400 transition">Projetos</a></li>
+            <li><a href="#sobre" class="hover:text-emerald-400 transition">Sobre Mim</a></li>
+            <li><a href="#social" class="hover:text-emerald-400 transition">Contatos</a></li>
         </ul>
+        <% if (data && data.presentation && data.presentation.phone) { %>
+            <a href="tel:<%= data.presentation.phone %>" class="hidden sm:inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-700 transition text-white text-sm px-3 py-1.5 rounded-lg shadow">
+                <i class="ph ph-phone"></i>
+                <span><%= data.presentation.phone %></span>
+            </a>
+        <% } %>
     </nav>
 </header>
