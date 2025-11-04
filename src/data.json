@@ -14,7 +14,7 @@
     },
     {
       "course": "Técnico em Desenvolvimento de Sistemas",
-      "institution": "Fatec",
+      "institution": "ETEC  ",
       "period": "Concluído (2022)"
     },
     {
@@ -24,12 +24,17 @@
     }
   ],
   "certifications": [
-    {"nome": null, "emissor": null, "data": null}
+    {
+      "name": "",
+      "nome": "toeic",
+      "emissor": "toeic",
+      "data": "2025"
+    }
   ],
   "technicalSkills": [
     "TypeScript",
     "Node.js",
-    "Express"
+    "React"
   ],
   "softSkills": [
     "Comunicação",
@@ -41,17 +46,10 @@
   "projects": [
     {
       "id": 1,
-      "title": "Projeto Exemplo",
+      "title": "Projetinho",
       "description": "Descrição do projeto exemplo.",
       "imageUrl": "/assets/exemplo.png",
       "link": "https://github.com/seuusuario/seuprojeto"
-    },
-    {
-      "id": 2,
-      "title": "Aerocode",
-      "description": "Um projeto feito em React e Node.",
-      "imageUrl": "/assets/novo.png",
-      "link": "https://github.com/joaoalv4ro/AV2"
     }
   ],
   "socialLinks": [

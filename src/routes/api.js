@@ -69,8 +69,6 @@ router.delete('/projetos/:id', (req, res) => {
 	}
 });
 
-module.exports = router;
-// ===== Novas rotas para outras seções =====
 
 // ========== PRESENTATION (Sobre) ==========
 router.get('/presentation', (req, res) => {
@@ -262,49 +260,6 @@ router.delete('/soft-skills/:index', (req, res) => {
 	}
 });
 
-// ========== LANGUAGES ==========
-router.get('/languages', (req, res) => {
-	try {
-		res.json(db.getLanguages());
-	} catch (err) {
-		console.error('Erro ao obter languages:', err);
-		res.status(500).json({ error: 'Erro ao obter languages' });
-	}
-});
-
-router.put('/languages', (req, res) => {
-	try {
-		const list = Array.isArray(req.body) ? req.body : (req.body && req.body.list);
-		const updated = db.setLanguages(list || []);
-		res.json(updated);
-	} catch (err) {
-		console.error('Erro ao atualizar languages:', err);
-		res.status(500).json({ error: 'Erro ao atualizar languages' });
-	}
-});
-
-router.post('/languages', (req, res) => {
-	try {
-		const { language } = req.body || {};
-		const updated = db.addLanguage(language);
-		res.status(201).json(updated);
-	} catch (err) {
-		console.error('Erro ao adicionar language:', err);
-		res.status(500).json({ error: 'Erro ao adicionar language' });
-	}
-});
-
-router.delete('/languages/:index', (req, res) => {
-	try {
-		const ok = db.deleteLanguage(req.params.index);
-		if (!ok) return res.status(404).json({ error: 'Índice inválido' });
-		res.status(204).send();
-	} catch (err) {
-		console.error('Erro ao deletar language:', err);
-		res.status(500).json({ error: 'Erro ao deletar language' });
-	}
-});
-
 // ========== SOCIAL LINKS ==========
 router.get('/social-links', (req, res) => {
 	try {
@@ -346,3 +301,5 @@ router.delete('/social-links/:index', (req, res) => {
 		res.status(500).json({ error: 'Erro ao deletar social link' });
 	}
 });
+
+module.exports = router;
