@@ -1,0 +1,53 @@
+{
+  "presentation": {
+    "fullName": "Seu Nome",
+    "contactEmail": "seu@email.com",
+    "bio": "Breve biografia...",
+    "profilePic": "/assets/profile.png"
+  },
+  "education": [
+    {
+      "course": "Tecnologia em Análise e Desenvolvimento de Sistemas",
+      "institution": "Sua Instituição",
+      "period": "Em andamento"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certificação Exemplo"
+    }
+  ],
+  "technicalSkills": [
+    "JavaScript",
+    "Node.js",
+    "Express"
+  ],
+  "softSkills": [
+    "Comunicação",
+    "Trabalho em equipe"
+  ],
+  "languages": [
+    "Português"
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Projeto Exemplo",
+      "description": "Descrição do projeto exemplo.",
+      "imageUrl": "/assets/exemplo.png",
+      "link": "https://github.com/seuusuario/seuprojeto"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/in/seuusuario",
+      "iconClass": "fab fa-linkedin-in"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/seuusuario",
+      "iconClass": "fab fa-github"
+    }
+  ]
+}
